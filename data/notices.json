@@ -1,0 +1,46 @@
+[
+  {
+    "id": "n001",
+    "title": "Annual Sports Day 2024",
+    "content": "The Annual Sports Day will be held on 20th December 2024. All students are requested to participate enthusiastically. Events include 100m race, long jump, relay race, and more.",
+    "category": "Event",
+    "targetAudience": "all",
+    "publishedBy": "Admin",
+    "publishedDate": "2024-12-01",
+    "isUrgent": false,
+    "attachments": []
+  },
+  {
+    "id": "n002",
+    "title": "Winter Vacation Notice",
+    "content": "School will remain closed for Winter Vacation from 25th December 2024 to 1st January 2025. Classes will resume on 2nd January 2025.",
+    "category": "Holiday",
+    "targetAudience": "all",
+    "publishedBy": "Admin",
+    "publishedDate": "2024-12-02",
+    "isUrgent": false,
+    "attachments": []
+  },
+  {
+    "id": "n003",
+    "title": "Fee Payment Reminder",
+    "content": "This is a reminder to all parents that the December fee is due by 10th December 2024. Please pay via online portal or visit the fee counter.",
+    "category": "Fee",
+    "targetAudience": "parents",
+    "publishedBy": "Admin",
+    "publishedDate": "2024-12-05",
+    "isUrgent": true,
+    "attachments": []
+  },
+  {
+    "id": "n004",
+    "title": "Half Yearly Results Published",
+    "content": "Half Yearly examination results have been published. Students can view their results in the portal. Report cards will be distributed on 15th December 2024.",
+    "category": "Academic",
+    "targetAudience": "students",
+    "publishedBy": "Admin",
+    "publishedDate": "2024-12-08",
+    "isUrgent": false,
+    "attachments": []
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u001",
+    "name": "Admin User",
+    "email": "admin@school.edu",
+    "password": "admin123",
+    "role": "admin",
+    "avatar": "",
+    "createdAt": "2024-01-01"
+  },
+  {
+    "id": "u002",
+    "name": "Priya Sharma",
+    "email": "priya@school.edu",
+    "password": "teacher123",
+    "role": "teacher",
+    "avatar": "",
+    "createdAt": "2024-01-05"
+  },
+  {
+    "id": "u003",
+    "name": "Rahul Verma",
+    "email": "rahul@school.edu",
+    "password": "student123",
+    "role": "student",
+    "avatar": "",
+    "createdAt": "2024-01-10"
+  },
+  {
+    "id": "u004",
+    "name": "Sunita Verma",
+    "email": "sunita@school.edu",
+    "password": "parent123",
+    "role": "parent",
+    "avatar": "",
+    "createdAt": "2024-01-10"
+  }
+]

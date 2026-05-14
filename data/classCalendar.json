@@ -1,0 +1,29 @@
+[
+  {
+    "id": "e001",
+    "className": "10A",
+    "title": "Mathematics Revision",
+    "date": "2026-05-10",
+    "time": "10:00",
+    "description": "Revision class for Chapter 5 and Q&A session.",
+    "createdBy": "Priya Sharma"
+  },
+  {
+    "id": "e002",
+    "className": "9B",
+    "title": "Science Lab Safety Session",
+    "date": "2026-05-12",
+    "time": "11:00",
+    "description": "Lab safety instructions and practical worksheet review.",
+    "createdBy": "Ramesh Kumar"
+  },
+  {
+    "id": "e003",
+    "className": "all",
+    "title": "Monthly Assembly",
+    "date": "2026-05-15",
+    "time": "08:30",
+    "description": "Whole school assembly and announcements.",
+    "createdBy": "Admin User"
+  }
+]

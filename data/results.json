@@ -1,0 +1,46 @@
+[
+  {
+    "id": "r001",
+    "studentId": "s001",
+    "studentName": "Rahul Verma",
+    "class": "10",
+    "section": "A",
+    "examType": "Half Yearly",
+    "academicYear": "2024-25",
+    "subjects": [
+      {"name": "Mathematics", "maxMarks": 100, "obtainedMarks": 88, "grade": "A"},
+      {"name": "Science", "maxMarks": 100, "obtainedMarks": 82, "grade": "A"},
+      {"name": "English", "maxMarks": 100, "obtainedMarks": 79, "grade": "B+"},
+      {"name": "Hindi", "maxMarks": 100, "obtainedMarks": 75, "grade": "B+"},
+      {"name": "Social Science", "maxMarks": 100, "obtainedMarks": 85, "grade": "A"}
+    ],
+    "totalMarks": 500,
+    "obtainedTotal": 409,
+    "percentage": 81.8,
+    "grade": "A",
+    "rank": 2,
+    "result": "Pass"
+  },
+  {
+    "id": "r002",
+    "studentId": "s002",
+    "studentName": "Ananya Singh",
+    "class": "10",
+    "section": "A",
+    "examType": "Half Yearly",
+    "academicYear": "2024-25",
+    "subjects": [
+      {"name": "Mathematics", "maxMarks": 100, "obtainedMarks": 95, "grade": "A+"},
+      {"name": "Science", "maxMarks": 100, "obtainedMarks": 91, "grade": "A+"},
+      {"name": "English", "maxMarks": 100, "obtainedMarks": 88, "grade": "A"},
+      {"name": "Hindi", "maxMarks": 100, "obtainedMarks": 82, "grade": "A"},
+      {"name": "Social Science", "maxMarks": 100, "obtainedMarks": 90, "grade": "A+"}
+    ],
+    "totalMarks": 500,
+    "obtainedTotal": 446,
+    "percentage": 89.2,
+    "grade": "A+",
+    "rank": 1,
+    "result": "Pass"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {"id":"a001","studentId":"s001","date":"2024-12-01","status":"present","class":"10","section":"A"},
+  {"id":"a002","studentId":"s002","date":"2024-12-01","status":"absent","class":"10","section":"A"},
+  {"id":"a003","studentId":"s003","date":"2024-12-01","status":"present","class":"9","section":"B"},
+  {"id":"a004","studentId":"s004","date":"2024-12-01","status":"present","class":"8","section":"A"},
+  {"id":"a005","studentId":"s001","date":"2024-12-02","status":"present","class":"10","section":"A"},
+  {"id":"a006","studentId":"s002","date":"2024-12-02","status":"present","class":"10","section":"A"},
+  {"id":"a007","studentId":"s003","date":"2024-12-02","status":"absent","class":"9","section":"B"},
+  {"id":"a008","studentId":"s004","date":"2024-12-02","status":"present","class":"8","section":"A"},
+  {"id":"a009","studentId":"s001","date":"2024-12-03","status":"present","class":"10","section":"A"},
+  {"id":"a010","studentId":"s002","date":"2024-12-03","status":"present","class":"10","section":"A"}
+]

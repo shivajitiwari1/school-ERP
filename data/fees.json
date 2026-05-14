@@ -1,0 +1,72 @@
+[
+  {
+    "id": "f001",
+    "studentId": "s001",
+    "studentName": "Rahul Verma",
+    "class": "10",
+    "feeType": "Tuition Fee",
+    "amount": 8000,
+    "dueDate": "2024-12-10",
+    "paidDate": "2024-12-05",
+    "paymentStatus": "paid",
+    "paymentMethod": "Online",
+    "transactionId": "TXN20241205001",
+    "month": "December 2024"
+  },
+  {
+    "id": "f002",
+    "studentId": "s002",
+    "studentName": "Ananya Singh",
+    "class": "10",
+    "feeType": "Tuition Fee",
+    "amount": 8000,
+    "dueDate": "2024-12-10",
+    "paidDate": null,
+    "paymentStatus": "pending",
+    "paymentMethod": null,
+    "transactionId": null,
+    "month": "December 2024"
+  },
+  {
+    "id": "f003",
+    "studentId": "s003",
+    "studentName": "Arjun Patel",
+    "class": "9",
+    "feeType": "Tuition Fee",
+    "amount": 7500,
+    "dueDate": "2024-12-10",
+    "paidDate": "2024-12-03",
+    "paymentStatus": "paid",
+    "paymentMethod": "Online",
+    "transactionId": "TXN20241203001",
+    "month": "December 2024"
+  },
+  {
+    "id": "f004",
+    "studentId": "s004",
+    "studentName": "Kavya Nair",
+    "class": "8",
+    "feeType": "Tuition Fee",
+    "amount": 7000,
+    "dueDate": "2024-12-10",
+    "paidDate": "2024-12-01",
+    "paymentStatus": "paid",
+    "paymentMethod": "Cash",
+    "transactionId": "CASH20241201001",
+    "month": "December 2024"
+  },
+  {
+    "id": "f005",
+    "studentId": "s001",
+    "studentName": "Rahul Verma",
+    "class": "10",
+    "feeType": "Exam Fee",
+    "amount": 500,
+    "dueDate": "2024-12-15",
+    "paidDate": null,
+    "paymentStatus": "pending",
+    "paymentMethod": null,
+    "transactionId": null,
+    "month": "December 2024"
+  }
+]

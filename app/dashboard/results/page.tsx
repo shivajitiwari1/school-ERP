@@ -44,17 +44,17 @@ export default function ResultsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {results.map(r => (
               <div key={r.id} className="card" style={{ padding: '1.5rem', cursor: 'pointer' }} onClick={() => setSelected(r)}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
-                    <div style={{ width: 52, height: 52, borderRadius: '50%', background: '#f0f4ff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '1.2rem', color: '#2563eb' }}>
+                <div className="result-card-body">
+                  <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', minWidth: 0 }}>
+                    <div style={{ width: 52, height: 52, borderRadius: '50%', background: '#f0f4ff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '1.2rem', color: '#2563eb', flexShrink: 0 }}>
                       {r.studentName.charAt(0)}
                     </div>
-                    <div>
+                    <div style={{ minWidth: 0 }}>
                       <h3 style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '1rem', fontWeight: 600 }}>{r.studentName}</h3>
                       <p style={{ fontSize: '0.82rem', color: '#64748b' }}>Class {r.class} · {r.examType} · {r.academicYear}</p>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                  <div className="result-card-stats">
                     <div style={{ textAlign: 'center' }}>
                       <p style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Total</p>
                       <p style={{ fontWeight: 700, fontSize: '1rem' }}>{r.obtainedTotal}/{r.totalMarks}</p>
@@ -73,7 +73,7 @@ export default function ResultsPage() {
                       <p style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Rank</p>
                       <p style={{ fontWeight: 700, fontSize: '1rem', color: r.rank === 1 ? '#f59e0b' : '#1e293b' }}>#{r.rank}</p>
                     </div>
-                    <span className={`badge ${r.result === 'Pass' ? 'badge-success' : 'badge-danger'}`}>{r.result}</span>
+                    <span className={`badge ${r.result === 'Pass' ? 'badge-success' : 'badge-danger'}`} style={{ alignSelf: 'center' }}>{r.result}</span>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function ResultsPage() {
               </tbody>
             </table>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem', padding: '1rem', background: '#f8fafc', borderRadius: 12 }}>
+            <div className="result-summary-grid">
               {[
                 ['Total Marks', `${selected.obtainedTotal}/${selected.totalMarks}`],
                 ['Percentage', `${selected.percentage}%`],

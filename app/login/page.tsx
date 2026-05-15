@@ -32,8 +32,8 @@ export default function LoginPage() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', background: 'linear-gradient(135deg, #0f2348 0%, #1a3a6e 50%, #2563eb 100%)' }}>
-      {/* Left panel */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem', color: 'white' }}>
+      {/* Left panel — hidden on mobile */}
+      <div className="login-left-panel">
         <div style={{ maxWidth: 420 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
             <div style={{ width: 56, height: 56, background: 'rgba(255,255,255,0.2)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28 }}>🎓</div>
@@ -55,8 +55,8 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right panel */}
-      <div style={{ width: 440, background: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '3rem', boxShadow: '-20px 0 60px rgba(0,0,0,0.3)' }}>
+      {/* Right panel — full width on mobile */}
+      <div className="login-right-panel">
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.75rem', fontWeight: 700, marginBottom: '0.5rem', color: '#1e293b' }}>Welcome Back</h2>
         <p style={{ color: '#64748b', marginBottom: '2rem', fontSize: '0.9rem' }}>Sign in to your school account</p>
 

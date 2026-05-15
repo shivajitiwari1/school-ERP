@@ -57,7 +57,7 @@ export default function StudentsPage() {
 
       <div className="page-body">
         {/* Filters */}
-        <div className="card" style={{ padding: '1rem 1.5rem', marginBottom: '1.25rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        <div className="card" style={{ padding: '1rem 1.5rem', marginBottom: '1.25rem', display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <input placeholder="🔍  Search name, ID, email..." value={search} onChange={e => setSearch(e.target.value)} style={{ maxWidth: 300 }} />
           <select value={classFilter} onChange={e => setClassFilter(e.target.value)} style={{ maxWidth: 180 }}>
             <option value="">All Classes</option>

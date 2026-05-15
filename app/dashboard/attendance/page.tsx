@@ -46,9 +46,9 @@ export default function AttendancePage() {
           <h2 style={{ fontSize: '1.3rem', fontWeight: 700 }}>Attendance</h2>
           <p style={{ fontSize: '0.85rem', color: '#64748b' }}>Mark and view daily attendance</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <button className={tab === 'mark' ? 'btn-primary' : 'btn-secondary'} onClick={() => setTab('mark')}>Mark Attendance</button>
-          <button className={tab === 'report' ? 'btn-primary' : 'btn-secondary'} onClick={() => setTab('report')}>View Report</button>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <button className={tab === 'mark' ? 'btn-primary' : 'btn-secondary'} onClick={() => setTab('mark')} style={{ fontSize: '0.85rem' }}>Mark</button>
+          <button className={tab === 'report' ? 'btn-primary' : 'btn-secondary'} onClick={() => setTab('report')} style={{ fontSize: '0.85rem' }}>Report</button>
         </div>
       </div>
 
@@ -78,14 +78,14 @@ export default function AttendancePage() {
         {tab === 'mark' && (
           <>
             {/* Summary */}
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
               {[
                 { label: 'Total', value: students.length, color: '#2563eb', bg: '#dbeafe' },
                 { label: 'Present', value: presentCount, color: '#10b981', bg: '#d1fae5' },
                 { label: 'Absent', value: absentCount, color: '#ef4444', bg: '#fee2e2' },
                 { label: 'Rate', value: students.length ? `${Math.round(presentCount/students.length*100)}%` : '—', color: '#f59e0b', bg: '#fef3c7' },
               ].map(s => (
-                <div key={s.label} className="card" style={{ padding: '1rem 1.5rem', flex: 1, display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div key={s.label} className="card" style={{ padding: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                   <div style={{ width: 40, height: 40, borderRadius: 12, background: s.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <span style={{ fontWeight: 700, color: s.color, fontSize: '1rem' }}>{s.value}</span>
                   </div>

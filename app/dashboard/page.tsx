@@ -23,7 +23,7 @@ export default function DashboardPage() {
     <div>
       <div className="page-header"><h2 style={{ fontSize: '1.3rem' }}>Dashboard</h2></div>
       <div className="page-body">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.25rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
           {[1,2,3,4].map(i => <div key={i} className="skeleton" style={{ height: 110 }} />)}
         </div>
       </div>
@@ -71,7 +71,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Charts Row */}
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.25rem', marginBottom: '2rem' }}>
+        <div className="dashboard-charts-grid">
           {/* Monthly Fee Collection */}
           <div className="card" style={{ padding: '1.5rem' }}>
             <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1.5rem', color: '#1e293b' }}>Monthly Fee Collection</h3>
@@ -101,7 +101,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Bottom Row */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+        <div className="dashboard-bottom-grid">
           {/* Recent Notices */}
           <div className="card" style={{ padding: '1.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>

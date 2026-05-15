@@ -1,6 +1,10 @@
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function HomePage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const topServices = [
     { title: 'Admissions', desc: 'Simplified student enrollment and application tracking.' },
     { title: 'Fee Management', desc: 'Instant billing, payment records, and fee reminders.' },
@@ -16,9 +20,11 @@ export default function HomePage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#f8fbff', color: '#1e293b' }}>
-      <header style={{ background: 'white', borderBottom: '1px solid #e2e8f0', padding: '1rem 2rem', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+      {/* ── Header ── */}
+      <header className="home-header">
+        <div className="home-header-inner">
+          {/* Logo */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexShrink: 0 }}>
             <div style={{ width: 44, height: 44, borderRadius: 14, background: 'linear-gradient(135deg, #2563eb, #1a3a6e)', display: 'grid', placeItems: 'center', color: 'white', fontSize: 22 }}>
               🎓
             </div>
@@ -28,35 +34,55 @@ export default function HomePage() {
             </div>
           </div>
 
-          <nav style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-            <Link href="#home" style={{ color: '#334155', textDecoration: 'none', fontWeight: 500 }}>Home</Link>
-            <Link href="#services" style={{ color: '#334155', textDecoration: 'none', fontWeight: 500 }}>Services</Link>
-            <Link href="#why" style={{ color: '#334155', textDecoration: 'none', fontWeight: 500 }}>Why Us</Link>
-            <Link href="/login" style={{ color: '#2563eb', textDecoration: 'none', fontWeight: 600 }}>Login</Link>
+          {/* Desktop nav */}
+          <nav className="home-nav-links">
+            <Link href="#home">Home</Link>
+            <Link href="#services">Services</Link>
+            <Link href="#why">Why Us</Link>
+            <Link href="/login" style={{ color: '#2563eb', fontWeight: 600 }}>Login</Link>
           </nav>
 
-          <Link href="/login" style={{ background: 'linear-gradient(135deg, #2563eb, #1a3a6e)', color: 'white', textDecoration: 'none', padding: '0.75rem 1.25rem', borderRadius: 12, fontWeight: 700 }}>Get Started</Link>
+          {/* Desktop CTA + Mobile hamburger */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <Link href="/login" className="home-cta-btn home-cta-desktop">Get Started</Link>
+            <button
+              className="hamburger-btn"
+              onClick={() => setMenuOpen(o => !o)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? '✕' : '☰'}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile dropdown nav */}
+        <nav className={`mobile-nav${menuOpen ? ' open' : ''}`}>
+          <Link href="#home" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="#services" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link href="#why" onClick={() => setMenuOpen(false)}>Why Us</Link>
+          <Link href="/login" className="mobile-nav-cta">Login / Get Started</Link>
+        </nav>
       </header>
 
+      {/* ── Hero ── */}
       <section id="home" style={{ padding: '5rem 2rem', background: 'linear-gradient(135deg, #0f2348 0%, #184b9d 45%, #2563eb 100%)', color: 'white' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+        <div className="home-hero-grid">
           <div>
             <div style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center', background: 'rgba(255,255,255,0.14)', padding: '0.7rem 1rem', borderRadius: 9999, marginBottom: '1.5rem', border: '1px solid rgba(255,255,255,0.22)' }}>
               <span style={{ fontSize: '0.95rem' }}>🎓</span>
-              <span style={{ fontSize: '0.85rem', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.9 }}>School ERP & Website</span>
+              <span style={{ fontSize: '0.85rem', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.9 }}>School ERP &amp; Website</span>
             </div>
-            <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.75rem, 5vw, 4.5rem)', lineHeight: 1.02, marginBottom: '1.5rem' }}>
+            <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 5vw, 4.5rem)', lineHeight: 1.08, marginBottom: '1.5rem' }}>
               Modern school management built for parents, teachers, and administrators.
             </h1>
             <p style={{ maxWidth: 580, fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.9, marginBottom: '2rem' }}>
               Manage admissions, fees, attendance, results, notices and dashboards from one clean and responsive platform.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link href="/login" style={{ background: 'white', color: '#1a3a6e', padding: '0.95rem 2rem', borderRadius: 14, fontWeight: 700, textDecoration: 'none', minWidth: 170, textAlign: 'center' }}>
+              <Link href="/login" style={{ background: 'white', color: '#1a3a6e', padding: '0.95rem 2rem', borderRadius: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' }}>
                 Admin Login
               </Link>
-              <Link href="/login" style={{ background: 'rgba(255,255,255,0.16)', color: 'white', padding: '0.95rem 2rem', borderRadius: 14, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.35)', minWidth: 170, textAlign: 'center' }}>
+              <Link href="/login" style={{ background: 'rgba(255,255,255,0.16)', color: 'white', padding: '0.95rem 2rem', borderRadius: 14, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.35)', textAlign: 'center' }}>
                 Student / Parent Login
               </Link>
             </div>
@@ -68,7 +94,7 @@ export default function HomePage() {
               <div style={{ display: 'grid', gap: '0.75rem' }}>
                 {['Live attendance', 'Fee collection', 'Noticeboard', 'Admissions portal'].map(item => (
                   <div key={item} style={{ display: 'flex', gap: '0.9rem', alignItems: 'center' }}>
-                    <div style={{ width: 38, height: 38, borderRadius: 12, background: 'white', display: 'grid', placeItems: 'center', color: '#2563eb', fontSize: 18 }}>✓</div>
+                    <div style={{ width: 38, height: 38, borderRadius: 12, background: 'white', display: 'grid', placeItems: 'center', color: '#2563eb', fontSize: 18, flexShrink: 0 }}>✓</div>
                     <p style={{ margin: 0, fontSize: '0.98rem', color: 'white', opacity: 0.94 }}>{item}</p>
                   </div>
                 ))}
@@ -92,13 +118,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Services ── */}
       <section id="services" style={{ padding: '4rem 2rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <p style={{ textTransform: 'uppercase', letterSpacing: '0.18em', color: '#2563eb', fontSize: '0.8rem', marginBottom: '0.75rem' }}>Core Services</p>
-          <h2 style={{ fontSize: '2.25rem', fontFamily: 'Playfair Display, serif', color: '#1a3a6e' }}>Everything your school needs in a single package</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.25rem)', fontFamily: 'Playfair Display, serif', color: '#1a3a6e' }}>Everything your school needs in a single package</h2>
           <p style={{ maxWidth: 720, margin: '0.75rem auto 0', color: '#64748b', lineHeight: 1.8 }}>From admissions to reports, the platform supports every essential school workflow with clean interfaces and real-time insights.</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.25rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
           {topServices.map(service => (
             <div key={service.title} style={{ background: 'white', borderRadius: 24, padding: '1.75rem', border: '1px solid #e2e8f0' }}>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.85rem', color: '#1a3a6e' }}>{service.title}</h3>
@@ -108,16 +135,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Why Us ── */}
       <section id="why" style={{ padding: '4rem 2rem', background: '#eef5ff' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
+        <div className="home-why-grid">
           <div>
             <p style={{ textTransform: 'uppercase', letterSpacing: '0.18em', color: '#2563eb', fontSize: '0.8rem', marginBottom: '0.75rem' }}>Why EduManage?</p>
-            <h2 style={{ fontSize: '2.25rem', fontFamily: 'Playfair Display, serif', color: '#1a3a6e', marginBottom: '1rem' }}>Designed to simplify school life for everyone</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.25rem)', fontFamily: 'Playfair Display, serif', color: '#1a3a6e', marginBottom: '1rem' }}>Designed to simplify school life for everyone</h2>
             <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: '2rem' }}>Deliver modern digital experiences for parents, teachers, and administrators with one easy-to-use platform.</p>
             <div style={{ display: 'grid', gap: '1rem' }}>
               {benefits.map(benefit => (
                 <div key={benefit.title} style={{ display: 'flex', gap: '0.85rem', alignItems: 'flex-start', background: 'white', borderRadius: 18, padding: '1.25rem', border: '1px solid #e2e8f0' }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 12, background: '#eff6ff', display: 'grid', placeItems: 'center', color: '#2563eb', fontSize: 18 }}>✓</div>
+                  <div style={{ width: 40, height: 40, borderRadius: 12, background: '#eff6ff', display: 'grid', placeItems: 'center', color: '#2563eb', fontSize: 18, flexShrink: 0 }}>✓</div>
                   <div>
                     <h3 style={{ margin: 0, fontSize: '1rem', color: '#1f2937' }}>{benefit.title}</h3>
                     <p style={{ margin: '0.5rem 0 0', color: '#64748b', lineHeight: 1.7 }}>{benefit.desc}</p>
@@ -141,6 +169,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Footer ── */}
       <footer style={{ background: '#0f2348', color: 'rgba(255,255,255,0.82)', padding: '2.5rem 2rem', textAlign: 'center' }}>
         <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', marginBottom: '0.5rem' }}>EduManage</p>
         <p style={{ color: '#cbd5e1', lineHeight: 1.8 }}>A complete school management system for modern institutions. Login to access the dashboard and manage your school online.</p>
